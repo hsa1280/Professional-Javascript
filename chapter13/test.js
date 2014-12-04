@@ -1,30 +1,3 @@
-function showMessage() {
-	alert("Hello");
-}
-var btn = document.getElementById("myText");
-btn.onclick = function(event) {
-	console.log(event.keyCode);
-}
-// btn.removeEventListener("click", showMessage, false);
-
-// var handler = function(event) {
-// 	switch(event.type) {
-// 		case "click":
-// 			alert("clicked");
-// 			break;
-// 		case "mouseover":
-// 			event.target.style.backgroundColor = "red";
-// 			break;
-// 		case "mouseout":
-// 			event.target.style.backgroundColor = "";
-// 			break;
-// 	}
-// };
-
-// btn.onclick = handler;
-// btn.onmouseover = handler;
-// btn.onmouseout = handler;
-
 var EventUtil = {
 
 	addHandler: function(element, type, handler) {
@@ -52,4 +25,17 @@ var EventUtil = {
 	}
 }
 
+var btn = document.getElementById("myBtn");
+var handler = function() {
+	alert("Clicked");
+}
 
+btn.onclick = function(e) {
+	alert(e.type);
+}
+
+var myLink = document.getElementById("myLink");
+myLink.onclick = function(event) {
+	// alert(event.type);
+	return false;
+}
